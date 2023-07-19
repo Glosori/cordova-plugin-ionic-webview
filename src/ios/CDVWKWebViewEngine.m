@@ -305,11 +305,7 @@
         // We'll honor that change for release builds, but will still allow inspection on debug builds by default.
         // We also introduce an override option, so consumers can influence this decision in their own build.
         if (@available(iOS 16.4, *)) {
-    #ifdef DEBUG
             BOOL allowWebviewInspectionDefault = YES;
-    #else
-            BOOL allowWebviewInspectionDefault = NO;
-    #endif
             wkWebView.inspectable = [settings cordovaBoolSettingForKey:@"InspectableWebview" defaultValue:allowWebviewInspectionDefault];
         }
     #endif
